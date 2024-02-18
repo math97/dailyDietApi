@@ -14,6 +14,7 @@
 - [X] The user must be able to list all  meal's;
 - [X] The user must be able to see a unique meal;
 - [X] The user must be able to delete a new meal;
+- [X] The user must be able to retrieve his metric's(Total of registred meals, meails in diet and off diet and best streak of meals in diet);
 
 # RN 
 - [X] The meals can be from type diet or not;
