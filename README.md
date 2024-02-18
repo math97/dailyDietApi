@@ -12,7 +12,7 @@
 - [X] The user must be able to register a new meal;
 - [X] The user must be able to edit an meal;
 - [X] The user must be able to list all  meal's;
-- [ ] The user must be able to see a unique meal;
+- [X] The user must be able to see a unique meal;
 - [ ] The user must be able to delete a new meal;
 
 # RN 

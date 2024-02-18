@@ -1,6 +1,6 @@
 import { FastifyInstance } from 'fastify'
 import { checkSessionIdExists } from '../middlewares/sessionId'
-import { object, z } from 'zod'
+import { z } from 'zod'
 import { knex } from '../database'
 import { randomUUID } from 'crypto'
 import { HTTP_STATUS_CODE } from '../models/http_status_code'
@@ -76,6 +76,26 @@ export async function mealsRoutes(app: FastifyInstance) {
       })
 
       return reply.status(HTTP_STATUS_CODE.NO_CONTENT).send()
+    },
+  )
+
+  app.get(
+    '/:mealId',
+    { preHandler: [checkSessionIdExists] },
+    async (request, reply) => {
+      const paramsSchema = z.object({ mealId: z.string().uuid() })
+
+      const { mealId } = paramsSchema.parse(request.params)
+
+      const meal = await knex('meals').where({ id: mealId }).first()
+
+      if (!meal) {
+        return reply
+          .status(HTTP_STATUS_CODE.NOT_FOUND)
+          .send({ error: 'Meal not found' })
+      }
+
+      return reply.send({ meal })
     },
   )
 }
