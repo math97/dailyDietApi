@@ -17,6 +17,7 @@ declare module 'knex/types/tables' {
       description: string
       diet: boolean
       user_id: string
+      date: number
       created_at: string
       updated_at: string
     }
