@@ -33,4 +33,13 @@ export async function mealsRoutes(app: FastifyInstance) {
       return reply.status(HTTP_STATUS_CODE.CREATED).send()
     },
   )
+
+  app.get('/', { preHandler: checkSessionIdExists }, async (request, reply) => {
+    const userId = request.user?.id
+    const meals = await knex('meals')
+      .where({ user_id: userId })
+      .orderBy('date', 'desc')
+
+    return reply.send({ meals })
+  })
 }
