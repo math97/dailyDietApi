@@ -2,11 +2,14 @@ import { app } from './app'
 
 const port = 3333
 
-app
-  .listen({
-    port,
-    host: 'localhost',
-  })
-  .then(() => {
-    console.log(`🚀HTTP Server Running on ${port}`)
-  })
+try {
+  app
+    .listen({
+      port,
+    })
+    .then((fullPath) => {
+      console.log(`🚀HTTP Server Running on ${port} and path => ${fullPath}`)
+    })
+} catch (error) {
+  console.log('err')
+}
