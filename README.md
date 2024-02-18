@@ -1,3 +1,7 @@
+# Description
+
+- This API it's been created to fullfill a challenge created by rocketseat on their module of backend from the Ignite course. The idea here it's to create a simple API to control diet with the follow requirement's.
+
 # RF
 
 ## Users
