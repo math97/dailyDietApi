@@ -18,7 +18,7 @@
 # RN 
 - [X] The meals can be from type diet or not;
 - [X] Should be able to identificate user's between requests;
-- [ ] Meals should be related to a user;
+- [X] Meals should be related to a user;
 - [ ] The user only can see meals that he created;
 - [ ] The user only can edit meals that he created;
 - [ ] The user only can delete meals that he created;

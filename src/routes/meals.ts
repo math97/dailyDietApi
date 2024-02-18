@@ -25,6 +25,7 @@ export async function mealsRoutes(app: FastifyInstance) {
         name,
         description,
         diet,
+        user_id: request.user?.id,
       })
 
       return reply.status(HTTP_STATUS_CODE.CREATED).send()
