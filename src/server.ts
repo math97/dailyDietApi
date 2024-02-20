@@ -1,6 +1,7 @@
 import { app } from './app'
+import { env } from './env'
 
-const port = 3333
+const port = env.PORT
 
 try {
   app
