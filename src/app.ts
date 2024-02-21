@@ -12,5 +12,3 @@ app.register(mealsRoutes, {
 app.register(usersRoutes, {
   prefix: 'users',
 })
-
-app.ready()
